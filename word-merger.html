@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Word Merger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <header>
+            <!-- <h1>Keyword Merger <span class="tag-pro">V3.0</swords mergepan></h1> -->
+            <h1>Keyword Merger</h1>
+            <p class="subtitle">Liste di parole combinate dinamicamente </p>
+        </header>
+
+        <!-- INPUT COLUMNS -->
+        <div class="columns-wrapper" id="col-wrapper"></div>
+
+        <!-- SETTINGS -->
+        <div class="settings-panel">
+
+            <!-- NEW STRATEGY BLOCK -->
+            <div class="setting-block" style="grid-column: span 1;">
+                <h3>⚡ Strategia Combinazioni</h3>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:5px;">Come vuoi unire le colonne
+                    "Mix"?</p>
+                <select id="combo-strategy">
+                    <option value="full">🔗 Full Chain (Es: A+B+C)</option>
+                    <option value="accumulative" selected>📚 Accumulativo (A, A+B, A+B+C)</option>
+                    <option value="min2">✂️ Minimo 2 (A+B, A+B+C)</option>
+                    <option value="powerset">🔀 Power Set (Tutti i sottoinsiemi)</option>
+                </select>
+
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:5px; margin-top:15px;">Logica Ordine
+                </p>
+                <label class="toggle-row">
+                    <span>Permutazioni (A+B & B+A)</span>
+                    <div class="switch"><input type="checkbox" id="permute-mode"><span class="slider"></span></div>
+                </label>
+            </div>
+
+            <div class="setting-block">
+                <h3>Impostazioni Testo</h3>
+                <select id="separator" onchange="toggleCustomSeparator(this)">
+                    <option value=" ">Separatore: Spazio ( )</option>
+                    <option value="">Separatore: Nessuno</option>
+                    <option value="+">Separatore: Più (+)</option>
+                    <option value="-">Separatore: Trattino (-)</option>
+                    <option value="_">Separatore: Underscore (_)</option>
+                    <option value="|">Separatore: Pipe (|)</option>
+                    <option value="custom" style="font-weight:bold; color:var(--accent);">✏️ Personalizzato...</option>
+                </select>
+                <!-- Input nascosto per il separatore custom -->
+                <input type="text" id="custom-separator" placeholder="Scrivi il separatore (es. / o ::)"
+                    style="display:none; margin-top:5px; border:1px solid var(--accent);">
+
+                <select id="text-case">
+                    <option value="none">Case: Originale</option>
+                    <option value="lower">Case: tutto minuscolo</option>
+                    <option value="upper">Case: TUTTO MAIUSCOLO</option>
+                    <option value="capitalize">Case: Capitalize Words</option>
+                </select>
+
+                <label class="toggle-row"><span>Rimuovi Duplicati</span>
+                    <div class="switch"><input type="checkbox" id="remove-duplicates" checked><span
+                            class="slider"></span></div>
+                </label>
+                <label class="toggle-row">
+                    <span>Ignora Righe Vuote</span>
+                    <div class="switch"><input type="checkbox" id="remove-empty" checked><span class="slider"></span>
+                    </div>
+                </label>
+
+                <label class="toggle-row" style="margin-top: 15px;">
+                    <span>Pulisci Spazi (Trim)</span>
+                    <div class="switch">
+                        <input type="checkbox" id="trim-spaces" checked>
+                        <span class="slider"></span>
+                    </div>
+                </label>
+            </div>
+
+            <div class="setting-block">
+                <h3>Opzioni SEO (Ads)</h3>
+                <label class="toggle-row"><span>Broad Match</span>
+                    <div class="switch"><input type="checkbox" id="match-broad" checked><span class="slider"></span>
+                    </div>
+                </label>
+                <label class="toggle-row"><span>"Phrase Match"</span>
+                    <div class="switch"><input type="checkbox" id="match-phrase"><span class="slider"></span></div>
+                </label>
+                <label class="toggle-row"><span>[Exact Match]</span>
+                    <div class="switch"><input type="checkbox" id="match-exact"><span class="slider"></span></div>
+                </label>
+                <!-- <div class="setting-block">
+                    <h3>Filtri</h3>
+                    <div style="display:flex; align-items:center; gap:10px;"> -->
+                <label for="max-len" style="font-size:0.9rem;">Max Caratteri:</label>
+                <input type="number" id="max-len" value="0" style="width:60px; margin:0; padding:5px;">
+                <span style="font-size:0.8rem; color:var(--text-muted);">(0 = illimitato)</span>
+                <p></p>
+                <!-- </div>
+                </div> -->
+
+            </div>
+
+            <div class="setting-block">
+                <h3>Wrapper (Pref/Suff)</h3>
+                <input type="text" id="wrap-before" placeholder="Prima (es. site:)">
+                <input type="text" id="wrap-after" placeholder="Dopo (es. .it)">
+            </div>
+        </div>
+
+        <div class="action-area">
+            <button class="btn btn-ghost" onclick="clearAll()">Reset</button>
+            <button class="btn btn-primary" onclick="processKeywords()">COMBINA 🚀</button>
+        </div>
+
+        <div class="output-container">
+            <div class="output-bar">
+                <span style="color:var(--text-muted)">Keyword Generate: <strong id="count-val"
+                        style="color:var(--accent)">0</strong></span>
+                <button class="btn-icon" onclick="copyOutput()" title="Copia"
+                    style="color:white; font-size:0.9rem; border:1px solid var(--border); padding:5px 10px; border-radius:4px;">COPIA</button>
+            </div>
+            <textarea id="output-text" readonly
+                placeholder="// Seleziona 'Accumulativo' per generare A, A+B, A+B+C..."></textarea>
+        </div>
+    </div>
+
+    <div id="toast">Copiato! 📋</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
