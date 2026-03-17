@@ -2,8 +2,8 @@
 <html lang="it">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
         content="Word Merger combina elenchi di parole per generare keyword mirate per campagne SEO e PPC. Risparmia tempo e migliora il ROI delle tue pubblicità online.">
     <!-- Open Graph / Facebook -->
@@ -26,11 +26,10 @@
 </head>
 
 <body>
-
     <div class="app-container">
         <header>
-            <h1>Keyword Merger</h1>
-            <p class="subtitle">Liste di parole combinate dinamicamente </p>
+            <h1>Words Merger</h1>
+            <p class="subtitle">Liste di parole combinate dinamicamente</p>
         </header>
 
         <!-- INPUT COLUMNS -->
@@ -38,7 +37,6 @@
 
         <!-- SETTINGS -->
         <div class="settings-panel">
-
             <!-- NEW STRATEGY BLOCK -->
             <div class="setting-block" style="grid-column: span 1;">
                 <h3>⚡ Strategia Combinazioni</h3>
@@ -116,7 +114,6 @@
                 <input type="number" id="max-len" value="0" style="width:60px; margin:0; padding:5px;">
                 <span style="font-size:0.8rem; color:var(--text-muted);">(0 = illimitato)</span>
                 <p></p>
-
             </div>
 
             <div class="setting-block">
@@ -142,45 +139,98 @@
                 placeholder="// Seleziona 'Accumulativo' per generare A, A+B, A+B+C..."></textarea>
         </div>
 
-
         <div id="toast">Copiato! 📋</div>
 
+        <!-- NEW TWO-COLUMN EXPLANATION SECTION -->
         <section class="seo-explanation">
             <h2>Perché scegliere Word Merger per le tue campagne SEO e PPC?</h2>
-            <div class="seo-benefits">
-                <div class="benefit">
-                    <h3>✨ Generazione intelligente di keyword</h3>
-                    <p>Combina automaticamente elenchi di parole per creare migliaia di varianti di keyword mirate,
-                        risparmiando ore di lavoro manuale.</p>
+            <div class="explanation-grid">
+                <!-- Prima colonna -->
+                <div class="explanation-column">
+                    <div class="explanation-box">
+                        <h3>🎯 Generazione intelligente di keyword</h3>
+                        <p>Combina automaticamente elenchi di parole per creare migliaia di varianti di keyword mirate,
+                            risparmiando ore di lavoro manuale.</p>
+                    </div>
+                    <div class="explanation-box">
+                        <h3>⚙️ Configurazione avanzata</h3>
+                        <p>Personalizza separatori, casi di testo, wrapper (prefissi/suffissi) e filtri di lunghezza per
+                            adattare le keyword alle tue esigenze specifiche.</p>
+                    </div>
+                    <div class="explanation-box">
+                        <h3>📈 Ottimizzazione per campagne pubblicitarie</h3>
+                        <p>Genera keyword per Broad Match, Phrase Match e Exact Match perfette per Google Ads, Microsoft
+                            Advertising e altre piattaforme PPC.</p>
+                    </div>
                 </div>
-                <div class="benefit">
-                    <h3>🎯 Strategie di combinazione avanzate</h3>
-                    <p>Scegli tra diverse modalità (Full Chain, Accumulativo, Minimo 2, Power Set) e attiva le
-                        permutazioni
-                        per coprire tutte le possibili varianti di ricerca.</p>
-                </div>
-                <div class="benefit">
-                    <h3>🔧 Personalizzazione completa</h3>
-                    <p>Personalizza separatori, casi di testo, wrapper (prefissi/suffissi) e filtri di lunghezza per
-                        adattare le keyword alle tue esigenze specifiche.</p>
-                </div>
-                <div class="benefit">
-                    <h3>📊 Ottimizzazione per campagne pubblicitarie</h3>
-                    <p>Genera keyword per Broad Match, Phrase Match e Exact Match perfette per Google Ads, Microsoft
-                        Advertising e altre piattaforme PPC.</p>
-                </div>
-                <div class="benefit">
-                    <h3>⚡ Efficienza e precisione</h3>
-                    <p>Elimina duplicati, ignora righe vuote, trimma gli spazi e controlla la lunghezza massima delle
-                        keyword per risultati puliti e professionali.</p>
+
+                <!-- Seconda colonna -->
+                <div class="explanation-column">
+                    <div class="explanation-box">
+                        <h3>🔄 Strategie di combinazione flessibili</h3>
+                        <p>Scegli tra diverse modalità (Full Chain, Accumulativo, Minimo 2, Power Set) e attiva le
+                            permutazioni per coprire tutte le possibili varianti di ricerca.</p>
+                    </div>
+                    <div class="explanation-box">
+                        <h3>🔍 Precisione e qualità</h3>
+                        <p>Elimina duplicati, ignora righe vuote, trimma gli spazi e controlla la lunghezza massima
+                            delle
+                            keyword per risultati puliti e professionali.</p>
+                    </div>
+                    <div class="explanation-box">
+                        <h3>🚀 Applicazioni versatili</h3>
+                        <p>Ideale per PPC & Google Ads, ricerca di domini, SEO & content strategy per individuare nuove
+                            opportunità di contenuti basate su combinazioni di termini informativi e transazionali.</p>
+                    </div>
                 </div>
             </div>
-            <p class="seo-note">Word Merger è lo strumento ideale per SEO specialist, PPC manager e content marketer che
-                vogliono espandere il loro elenco di keyword in modo rapido ed efficiente, migliorando la copertura
-                delle
-                campagne e il ritorno sull'investimento pubblicitario.</p>
+
+            <!-- Sezione aggiuntiva: Come funziona -->
+            <div class="how-it-works">
+                <h3>🔧 Come funziona un Keyword Merger</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-indicator">1</div>
+                        <div class="step-body">
+                            <h4>Input</h4>
+                            <p>Inserisci liste di parole in diverse colonne (es. Lista A: "miglior", "economico"; Lista
+                                B: "smartphone", "laptop"; Lista C: "2024", "recensione").</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-indicator">2</div>
+                        <div class="step-body">
+                            <h4>Configurazione</h4>
+                            <p>Scegli un separatore (spazio, trattino, virgola) e, se necessario, il tipo di
+                                corrispondenza per Google Ads (corrispondenza a frase, esatta, ecc.).</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-indicator">3</div>
+                        <div class="step-body">
+                            <h4>Output</h4>
+                            <p>Il tool genera una lista completa che combina ogni parola della prima lista con quelle
+                                delle successive (es. "miglior smartphone 2024", "economico laptop recensione").</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seo-callout">
+                <div class="seo-callout-icon">💡</div>
+                <div class="seo-callout-content">
+                    <p>Words Merger è lo strumento ideale per SEO specialist, PPC manager e content marketer che
+                        vogliono espandere il loro elenco di keyword in modo rapido ed efficiente, migliorando la
+                        copertura
+                        delle campagne e il ritorno sull'investimento pubblicitario.</p>
+                </div>
+            </div>
         </section>
+        <footer class="site-footer">
+            <p>Tutto avviene nel tuo browser - nessun dato viene inviato a server esterni e non ci sono traccianti.</p>
+        </footer>
     </div>
+
     <script src="assets/js/script.js"></script>
 </body>
 
