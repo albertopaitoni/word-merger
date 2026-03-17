@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Word Merger</title>
+    <meta name="description"
+        content="Word Merger combina elenchi di parole per generare keyword mirate per campagne SEO e PPC. Risparmia tempo e migliora il ROI delle tue pubblicità online.">
+    <title>Word Merger</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
 </head>
 
 <body>
 
     <div class="app-container">
         <header>
-            <!-- <h1>Keyword Merger <span class="tag-pro">V3.0</swords mergepan></h1> -->
             <h1>Keyword Merger</h1>
             <p class="subtitle">Liste di parole combinate dinamicamente </p>
         </header>
@@ -96,15 +98,10 @@
                 <label class="toggle-row"><span>[Exact Match]</span>
                     <div class="switch"><input type="checkbox" id="match-exact"><span class="slider"></span></div>
                 </label>
-                <!-- <div class="setting-block">
-                    <h3>Filtri</h3>
-                    <div style="display:flex; align-items:center; gap:10px;"> -->
                 <label for="max-len" style="font-size:0.9rem;">Max Caratteri:</label>
                 <input type="number" id="max-len" value="0" style="width:60px; margin:0; padding:5px;">
                 <span style="font-size:0.8rem; color:var(--text-muted);">(0 = illimitato)</span>
                 <p></p>
-                <!-- </div>
-                </div> -->
 
             </div>
 
@@ -130,10 +127,46 @@
             <textarea id="output-text" readonly
                 placeholder="// Seleziona 'Accumulativo' per generare A, A+B, A+B+C..."></textarea>
         </div>
+
+
+        <div id="toast">Copiato! 📋</div>
+
+        <section class="seo-explanation">
+            <h2>Perché scegliere Word Merger per le tue campagne SEO e PPC?</h2>
+            <div class="seo-benefits">
+                <div class="benefit">
+                    <h3>✨ Generazione intelligente di keyword</h3>
+                    <p>Combina automaticamente elenchi di parole per creare migliaia di varianti di keyword mirate,
+                        risparmiando ore di lavoro manuale.</p>
+                </div>
+                <div class="benefit">
+                    <h3>🎯 Strategie di combinazione avanzate</h3>
+                    <p>Scegli tra diverse modalità (Full Chain, Accumulativo, Minimo 2, Power Set) e attiva le
+                        permutazioni
+                        per coprire tutte le possibili varianti di ricerca.</p>
+                </div>
+                <div class="benefit">
+                    <h3>🔧 Personalizzazione completa</h3>
+                    <p>Personalizza separatori, casi di testo, wrapper (prefissi/suffissi) e filtri di lunghezza per
+                        adattare le keyword alle tue esigenze specifiche.</p>
+                </div>
+                <div class="benefit">
+                    <h3>📊 Ottimizzazione per campagne pubblicitarie</h3>
+                    <p>Genera keyword per Broad Match, Phrase Match e Exact Match perfette per Google Ads, Microsoft
+                        Advertising e altre piattaforme PPC.</p>
+                </div>
+                <div class="benefit">
+                    <h3>⚡ Efficienza e precisione</h3>
+                    <p>Elimina duplicati, ignora righe vuote, trimma gli spazi e controlla la lunghezza massima delle
+                        keyword per risultati puliti e professionali.</p>
+                </div>
+            </div>
+            <p class="seo-note">Word Merger è lo strumento ideale per SEO specialist, PPC manager e content marketer che
+                vogliono espandere il loro elenco di keyword in modo rapido ed efficiente, migliorando la copertura
+                delle
+                campagne e il ritorno sull'investimento pubblicitario.</p>
+        </section>
     </div>
-
-    <div id="toast">Copiato! 📋</div>
-
     <script src="assets/js/script.js"></script>
 </body>
 
